@@ -48,3 +48,9 @@
   remote_user: ansible
   roles:
     - { role: packages }
+
+- name: Set MOTD
+  hosts:  all
+  remote_user: ansible
+  roles:
+    - { role: motd }
