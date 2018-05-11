@@ -42,3 +42,9 @@
   remote_user: ansible
   roles:
     - { role: update_server }
+
+- name: Install specific packages
+  hosts:  all
+  remote_user: ansible
+  roles:
+    - { role: packages }

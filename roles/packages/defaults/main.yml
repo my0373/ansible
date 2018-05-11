@@ -1,0 +1,6 @@
+---
+# defaults file for update_server
+packages_install:
+  - vim
+  - tree
+  - iptraf-ng

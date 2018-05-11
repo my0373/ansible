@@ -1,0 +1,10 @@
+---
+ ## Install specific packages
+  - name: "Install packages"
+    yum:
+      name: "{{ item }}"
+      state: latest
+    become: yes
+    with_items: "{{ packages_install }}"
+    tags:
+      - "packages"
