@@ -1,5 +1,5 @@
 ---
-## Run all playbooks on all hosts. Make sure this is what you actually want.
+## Run RHEL OS playbooks on all hosts. Make sure this is what you actually want.
 
 - name: Configure SELinux
   hosts:  all
@@ -25,3 +25,8 @@
   roles:
     - { role: ntpclient }
 
+- name: Configure firewalld
+  hosts:  all
+  remote_user: ansible
+  roles:
+    - { role: firewalld }

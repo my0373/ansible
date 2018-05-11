@@ -1,0 +1,4 @@
+---
+# tasks file for ansible_user
+  - include_tasks: create_nonpriv_user.yaml
+    tags: nonpriv_user
