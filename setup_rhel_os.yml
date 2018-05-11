@@ -36,3 +36,9 @@
   remote_user: ansible
   roles:
     - { role: sshd }
+
+- name: Patch the host
+  hosts:  all
+  remote_user: ansible
+  roles:
+    - { role: update_server }

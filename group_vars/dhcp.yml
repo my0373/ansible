@@ -11,3 +11,4 @@ firewalld_ports:
   - "53/tcp"
   - "69/udp"
 
+update_server_allow_reboot: no

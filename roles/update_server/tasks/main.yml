@@ -1,0 +1,6 @@
+---
+# tasks file for sshd
+
+  - include_tasks: update.yaml
+    tags:
+      - update
