@@ -10,3 +10,6 @@ firewalld_ports:
   - "53/udp"
   - "53/tcp"
   - "69/udp"
+
+sshd_usedns: "no"
+sshd_allow_root: "no"

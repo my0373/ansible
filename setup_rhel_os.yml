@@ -30,3 +30,9 @@
   remote_user: ansible
   roles:
     - { role: firewalld }
+
+- name: Configure sshd
+  hosts:  all
+  remote_user: ansible
+  roles:
+    - { role: sshd }

@@ -30,3 +30,6 @@ rhsm_repos_enabled_repos:
 firewalld_ports:
     -   "443/tcp"
     -   "53/udp"
+
+sshd_usedns: "no"
+sshd_allow_root: "no"

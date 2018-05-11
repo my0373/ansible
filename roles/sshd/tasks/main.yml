@@ -1,0 +1,6 @@
+---
+# tasks file for sshd
+
+  - include_tasks: sshd.yaml
+    tags:
+      - sshd
