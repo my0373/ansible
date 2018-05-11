@@ -1,0 +1,11 @@
+.idea/
+*.pyc
+*.key
+id_rsa
+id_rsa.pub
+*.secret
+*.bak
+*.retry
+inventory
+group_vars/all.yml
+firewalld/

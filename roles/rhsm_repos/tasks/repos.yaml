@@ -1,0 +1,26 @@
+---
+
+## So this isn't the most efficient way of using this module to disable all repos and
+## enable others, however it is the most readable.
+
+## This breaks idempotency, but I dislike the syntax of the rhsm_repository difference more.
+
+- name: Disable all repositories
+  rhsm_repository:
+    name: "*"
+    state: disabled
+  tags:
+    - repos
+  become: yes
+
+- name: Enable specific repos
+  rhsm_repository:
+    name: "{{ item }}"
+    state: enabled
+  with_items: "{{ rhsm_repos_enabled_repos }}"
+  notify: yum-clean-metadata
+  tags:
+    - repos
+  become: yes
+
+

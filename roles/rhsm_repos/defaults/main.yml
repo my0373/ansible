@@ -1,0 +1,3 @@
+---
+rhsm_repos_enabled_repos:
+  - rhel-7-server-rpms

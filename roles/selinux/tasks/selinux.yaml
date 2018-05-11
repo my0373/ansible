@@ -1,0 +1,8 @@
+---
+  - name: "Configure SELinux"
+    selinux:
+      policy: "{{ selinux_policy }}"
+      state: "{{ selinux_state }}"
+    become: yes
+    tags:
+      - selinux

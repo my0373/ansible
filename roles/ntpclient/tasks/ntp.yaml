@@ -1,0 +1,38 @@
+---
+
+  - name: Install required NTP packages
+    yum:
+      name: "{{ item }}"
+      state: latest
+    with_items:
+      - "ntp"
+      - "ntpdate"
+    become: yes
+    tags:
+      - ntp
+
+  - template:
+      src: ntp.conf.j2
+      dest: /etc/ntp.conf
+      owner: root
+      group: root
+      mode: 0644
+    become: yes
+    notify: restart ntpd
+    tags:
+      - ntp
+
+  - name: enable NTP
+    service:
+      name: ntpd
+      state: started
+      enabled: yes
+    become: yes
+    notify: sync time
+    tags:
+      - ntp
+
+
+
+
+

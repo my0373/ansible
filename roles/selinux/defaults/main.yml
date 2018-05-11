@@ -1,0 +1,10 @@
+---
+## SELinux default settings
+
+# selinux_policy can be "mls" or "targeted"
+selinux_policy: "targeted"
+
+# the state can be "enforcing","permissive", "disabled"
+selinux_state: "enforcing"
+
+

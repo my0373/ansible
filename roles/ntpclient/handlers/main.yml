@@ -1,0 +1,16 @@
+---
+
+- name: restart ntpd
+  service:
+    name: ntpd
+    state: restarted
+    enabled: yes
+  become: yes
+  listen: sync time
+
+
+- name: sync ntpdate
+  command: "/sbin/ntpdate {{ ntpclient_servers[0] }}"
+  become: yes
+  ignore_errors: yes
+  listen: sync time

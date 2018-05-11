@@ -1,0 +1,27 @@
+---
+## Run all playbooks on all hosts. Make sure this is what you actually want.
+
+- name: Configure SELinux
+  hosts:  all
+  remote_user: ansible
+  roles:
+    - { role: selinux }
+
+- name: Configure subscription manager
+  hosts:  all
+  remote_user: ansible
+  roles:
+    - { role: rhsm_subscribe }
+
+- name: Configure RHSM Repos
+  hosts:  all
+  remote_user: ansible
+  roles:
+    - { role: rhsm_repos }
+
+- name: Configure NTP client
+  hosts:  all
+  remote_user: ansible
+  roles:
+    - { role: ntpclient }
+
