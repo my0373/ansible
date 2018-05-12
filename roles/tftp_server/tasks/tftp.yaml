@@ -1,0 +1,19 @@
+---
+  - name: Install the TFTP server
+    yum:
+      name: tftp-server
+      state: latest
+    notify: restart tftp service
+    become: yes
+    tags:
+      - tftp
+
+  - name: Creating the "{{ ISO_DIR }}" directory
+    file: path="{{ ISO_DIR }}" state=directory
+    notify: restart tftp service
+    become: yes
+    tags:
+      - tftp
+
+
+

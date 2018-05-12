@@ -21,7 +21,7 @@
     notify: sync time
     tags:
       - ntp
-      
+
   - name: disable chronyd
     service:
       name: chronyd

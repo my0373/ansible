@@ -1,0 +1,8 @@
+firewalld_ports:
+  - "80/tcp"
+  - "69/tcp"
+  - "69/udp"
+  - "443/tcp"
+  - "22/tcp"
+
+ISO_DIR: "/ISO/ofo"

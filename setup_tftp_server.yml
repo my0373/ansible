@@ -1,0 +1,8 @@
+---
+## Run RHEL OS playbooks on all hosts. Make sure this is what you actually want.
+
+- name: Setup tftp server
+  hosts:  tftp
+  remote_user: ansible
+  roles:
+    - { role: tftp_server }
