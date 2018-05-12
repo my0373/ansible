@@ -21,6 +21,15 @@
     notify: sync time
     tags:
       - ntp
+      
+  - name: disable chronyd
+    service:
+      name: chronyd
+      state: stopped
+      enabled: no
+    become: yes
+    tags:
+      - ntp
 
   - name: enable NTP
     service:
@@ -31,6 +40,8 @@
     notify: sync time
     tags:
       - ntp
+
+
 
 
 
