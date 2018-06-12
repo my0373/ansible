@@ -1,0 +1,15 @@
+<network>
+  <name>mgmt</name>
+  <uuid>348fdb53-7b75-4349-a25d-3ead42978b3f</uuid>
+  <forward mode='nat'>
+    <nat>
+      <port start='1024' end='65535'/>
+    </nat>
+  </forward>
+  <bridge name='virbr0' stp='on' delay='0'/>
+  <mac address='52:54:00:b2:df:d0'/>
+  <domain name='mgmt'/>
+  <ip address='192.168.100.1' netmask='255.255.255.0'>
+  </ip>
+</network>
+

@@ -1,5 +1,4 @@
 ---
-
   - name: Install required NTP packages
     yum:
       name: "{{ item }}"
@@ -10,6 +9,19 @@
     become: yes
     tags:
       - ntp
+    when: ansible_distribution == "Redhat"
+
+  - name: Install required NTP packages
+    dnf:
+      name: "{{ item }}"
+      state: latest
+    with_items:
+      - "ntp"
+      - "ntpdate"
+    become: yes
+    tags:
+      - ntp
+    when: ansible_distribution == "Fedora"
 
   - template:
       src: ntp.conf.j2

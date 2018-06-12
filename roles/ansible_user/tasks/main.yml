@@ -1,4 +1,8 @@
 ---
 # tasks file for ansible_user
+  - name: Installing dependancies
+    include_tasks: "{{ ansible_distribution }}_deps.yml"
+
+
   - include_tasks: create_nonpriv_user.yaml
     tags: nonpriv_user

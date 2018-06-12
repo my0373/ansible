@@ -1,0 +1,9 @@
+---
+- name: kvm
+  dnf:
+    name: "{{ item }}"
+    state: latest
+  with_items:
+    - qemu-kvm 
+    - virt-manager
+    - virt-install

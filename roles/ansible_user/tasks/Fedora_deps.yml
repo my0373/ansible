@@ -1,0 +1,5 @@
+---
+- name: Installing Fedora dependancies
+  dnf:
+    name: libselinux-python
+    state: latest

@@ -1,0 +1,38 @@
+#############################################
+## Default ansible catchall variables
+#############################################
+
+###############################
+## SELinux
+###############################
+# selinux_policy can be "mls" or "targeted"
+selinux_policy: "targeted"
+
+# the state can be "enforcing","permissive", "disabled"
+selinux_state: "enforcing"
+
+
+
+###############################
+## ntpclient
+###############################
+
+ntpclient_servers:
+  - "0.uk.pool.ntp.org"
+  - "1.uk.pool.ntp.org"
+  - "2.uk.pool.ntp.org"
+  - "3.uk.pool.ntp.org"
+
+
+rhsm_subscribe_user: ""
+rhsm_subscribe_password: ""
+
+rhsm_repos_enabled_repos:
+  - rhel-7-server-rpms
+
+firewalld_ports:
+  - "443/tcp"
+  - "53/udp"
+
+sshd_usedns: "no"
+sshd_allow_root: "no"

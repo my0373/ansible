@@ -1,0 +1,25 @@
+---
+- name: Configure SELinux
+  hosts:  p50
+  remote_user: ansible
+  roles:
+    - { role: selinux }
+
+- name: Configure NTP Client
+  hosts:  p50
+  remote_user: ansible
+  roles:
+    - { role: ntpclient }
+
+- name: Configure MOTD
+  hosts:  p50
+  remote_user: ansible
+  roles:
+    - { role: motd }
+
+- name: Configure KVM
+  hosts:  p50
+  remote_user: ansible
+  become: yes
+  roles:
+    - { role: kvm_hypervisor }
