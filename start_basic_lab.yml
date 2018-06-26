@@ -1,0 +1,56 @@
+---
+## Run RHEL OS playbooks on all hosts. Make sure this is what you actually want.
+
+- name: Configure SELinux
+  hosts:  all
+  remote_user: ansible
+  roles:
+    - { role: selinux }
+
+- name: Configure subscription manager
+  hosts:  all
+  remote_user: ansible
+  roles:
+    - { role: rhsm_subscribe }
+
+- name: Configure RHSM Repos
+  hosts:  all
+  remote_user: ansible
+  roles:
+    - { role: rhsm_repos }
+
+- name: Configure NTP client
+  hosts:  all
+  remote_user: ansible
+  roles:
+    - { role: ntpclient }
+
+- name: Configure firewalld
+  hosts:  all
+  remote_user: ansible
+  roles:
+    - { role: firewalld }
+
+- name: Configure sshd
+  hosts:  all
+  remote_user: ansible
+  roles:
+    - { role: sshd }
+
+- name: Patch the host
+  hosts:  all
+  remote_user: ansible
+  roles:
+    - { role: update_server }
+
+- name: Install specific packages
+  hosts:  all
+  remote_user: ansible
+  roles:
+    - { role: packages }
+
+- name: Set MOTD
+  hosts:  all
+  remote_user: ansible
+  roles:
+    - { role: motd }
