@@ -1,0 +1,19 @@
+- name: Check subscription status
+  shell: /usr/sbin/subscription-manager status | grep  "Overall Status" | awk '{ print $3}'
+  register: subscription_status
+  
+- debug:
+    msg: "{{ subscription_status.stdout }}"
+
+- name: Pull bootstrap script
+  shell: /usr/bin/curl -o /root/bootstrap.py http://{{ sat6_hostname }}/pub/bootstrap.py
+  args:
+    creates: /root/bootstrap.py
+  when: subscription_status.stdout != "Current"
+
+- name: Make bootstrap executable
+  file: dest=/root/bootstrap.py mode=a+x
+
+- name: Run bootstrap
+  shell: /root/bootstrap.py -l {{ sat6_username }} -s {{ sat6_hostname }} -p {{ sat6_password }} -o {{ sat6_org }} -L {{ sat6_location }} -g {{ sat6_hostgroup }} -a {{ sat6_activationkey }} --force
+  when: subscription_status.stdout != "Current"

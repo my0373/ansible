@@ -33,3 +33,17 @@ firewalld_ports:
 
 sshd_usedns: "no"
 sshd_allow_root: "no"
+
+#########################
+# Satellite 6 bootstrap 
+#########################
+
+sat6_hostname: 'sat6.lab.local'
+sat6_username: 'admin'
+sat6_password: 'redhat'
+sat6_org: 'lab'
+sat6_location: 'laptop'
+sat6_hostgroup: 'rhel7/Production'
+sat6_activationkey: 'rhel7-prod'
+bootstrap_force: yes
+

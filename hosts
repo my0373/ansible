@@ -2,3 +2,6 @@
 
 matt-p50              ansible_connection=local
 #p50-ssh          ansible_connection=ssh ansible_host=127.0.0.1   ansible_port=22 
+#
+[patch]
+patchme          ansible_connection=ssh ansible_host=192.168.101.5 ansible_port=22 
